@@ -1,5 +1,5 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const genAI = new GoogleGenerativeAI("AIzaSyB-I7Y390kDYmlAgk90JWZSZkm5Sbbk_iQ");
+const genAI = new GoogleGenerativeAI("AIzaSyB-I7Y390kDYmlAgk90JWZSZkm5Sbbk_iQ");    //LOL pls don't take my api key :) .env file where :\
 const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
 const { SlashCommandBuilder } = require('discord.js');
