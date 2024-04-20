@@ -1,16 +1,3 @@
-/*const Discord = require("discord.js");
-const client = new Discord.Client({ intents: ["Guilds"]})
-
-client.on("ready", () => {
-	console.log("The bot is ready")
-})
-
-client.on("interactionCreate", async (interaction) => {
-	if(interaction.isCommand){
-		if(interaction.commandName === )
-	}
-})*/
-
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
@@ -40,8 +27,17 @@ client.once(Events.ClientReady, readyClient => {
 	console.log(`Ready! Logged in as ${readyClient.user.tag}`);
 });
 
+//const wait = require('node:timers/promises').setTimeout;
+
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;
+/*
+	if (interaction.commandName === 'pickupline') {
+		await interaction.deferReply();
+		await wait(4_000);
+		await interaction.editReply('BRO!');
+	}
+*/
 	const command = interaction.client.commands.get(interaction.commandName);
 
 	if (!command) {
