@@ -14,7 +14,7 @@ client.on("interactionCreate", async interaction => {
 	}
 
 	if(interaction.commandName === "pickupline") {
-		const prompt = "Give a pg witty line for a person you love."
+		const prompt = "Give a pg witty line to compliment a person."
         const result = await model.generateContent(prompt);
         const response = await result.response;
         await interaction.reply(response.text());
