@@ -1,8 +1,8 @@
 const { REST, Routes, SlashCommandBuilder } = require('discord.js');
-const { botID, serverID, token } = require('./config.json');
+const { botID, serverID, discordToken } = require('./config.json');
 
 // Construct and prepare an instance of the REST module
-const rest = new REST().setToken(token);
+const rest = new REST().setToken(discordToken);
 
 // and deploy your commands!
 const slashRegister = async () => {

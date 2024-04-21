@@ -1,9 +1,9 @@
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-const { token } = require('./config.json');
+const { discordToken, geminiToken } = require('./config.json');
 
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const genAI = new GoogleGenerativeAI("AIzaSyB-I7Y390kDYmlAgk90JWZSZkm5Sbbk_iQ");    //LOL pls don't take my api key :) .env file where :\
+const genAI = new GoogleGenerativeAI(geminiToken); 
 const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
 client.on("interactionCreate", async interaction => {
@@ -21,4 +21,4 @@ client.on("interactionCreate", async interaction => {
 	}
 });
 
-client.login(token);
+client.login(discordToken);
